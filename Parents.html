@@ -1,58 +1,179 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>بوابة أولياء الأمور - مرج الحمام المهنية</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    function handleParentSubmit(event) {
-      event.preventDefault();
-      const parentName = document.getElementById('parent-name').value;
-      const studentName = document.getElementById('student-name').value;
-      const relation = document.getElementById('relation').value;
-      if (parentName && studentName && relation) {
-        alert(`مرحباً ${parentName}! أنت ولي أمر ${relation} للطالب ${studentName}.`);
-      } else {
-        alert('يرجى ملء جميع الحقول.');
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, #1f1f1f, #3b3b3b);
+      color: #ffd700;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #1e1e1e;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #f1f1f1;
+      font-size: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #ffd700;
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e6c200;
+      transform: translateY(-2px);
+    }
+
+    .extra-links {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .extra-links a {
+      color: #ffd700;
+      text-decoration: underline;
+      margin: 0 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #bbb;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
       }
     }
-  </script>
+  </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>بوابة أولياء الأمور</h1>
-      <p class="sub">مرحباً بكم في بوابة أولياء الأمور - مدرسة مرج الحمام المهنية للبنين</p>
-    </div>
+    <h1>بوابة أولياء الأمور</h1>
+    <p class="sub">تسجيل الدخول باستخدام البريد الإلكتروني</p>
   </header>
 
-  <main class="container">
-    <section class="form-section">
-      <h2>تسجيل دخول ولي الأمر</h2>
-      <form onsubmit="handleParentSubmit(event)">
-        <label for="parent-name">اسم ولي الأمر:</label>
-        <input type="text" id="parent-name" name="parent-name" placeholder="ادخل اسمك الكامل" required>
+  <div class="container">
+    <h2>تسجيل الدخول</h2>
+    <form id="loginForm">
+      <label for="email">البريد الإلكتروني:</label>
+      <input type="email" id="email" required placeholder="example@email.com">
 
-        <label for="student-name">اسم الطالب:</label>
-        <input type="text" id="student-name" name="student-name" placeholder="ادخل اسم الطالب الكامل" required>
+      <label for="password">كلمة المرور:</label>
+      <input type="password" id="password" required placeholder="********">
 
-        <label for="relation">العلاقة:</label>
-        <select id="relation" name="relation">
-          <option value="أب">أب</option>
-          <option value="أم">أم</option>
-          <option value="ولي أمر آخر">ولي أمر آخر</option>
-        </select>
+      <button type="submit">تسجيل الدخول</button>
+    </form>
 
-        <button type="submit" class="btn">دخول</button>
-      </form>
-    </section>
-  </main>
+    <div class="extra-links">
+      <p>
+        ليس لديك حساب؟ <a href="register.html">أنشئ بريدًا إلكترونيًا الآن</a><br>
+        نسيت كلمة المرور؟ <a href="forgot-password.html">استعادة كلمة المرور</a>
+      </p>
+    </div>
+  </div>
 
   <footer>
-    <div class="container">
-      <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
-    </div>
+    <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
   </footer>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDCnVQRJdIZmUoQUfs2lgxzkaAi6ZgPIC0",
+      authDomain: "ecl11-abe91.firebaseapp.com",
+      projectId: "ecl11-abe91",
+      storageBucket: "ecl11-abe91.appspot.com",
+      messagingSenderId: "1018082200776",
+      appId: "1:1018082200776:web:785f649089c6e603e7a9fd"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert("تم تسجيل الدخول بنجاح");
+          // يمكنك إعادة التوجيه لصفحة أولياء الأمور بعد الدخول
+          // window.location.href = "parent-dashboard.html";
+        })
+        .catch((error) => {
+          alert("حدث خطأ: " + error.message);
+        });
+    });
+  </script>
 </body>
 </html>
