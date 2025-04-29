@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة أولياء الأمور - مرج الحمام المهنية</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function handleParentSubmit(event) {
+      event.preventDefault();
+      const parentName = document.getElementById('parent-name').value;
+      const studentName = document.getElementById('student-name').value;
+      const relation = document.getElementById('relation').value;
+      if (parentName && studentName && relation) {
+        alert(`مرحباً ${parentName}! أنت ولي أمر ${relation} للطالب ${studentName}.`);
+      } else {
+        alert('يرجى ملء جميع الحقول.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>بوابة أولياء الأمور</h1>
+      <p class="sub">مرحباً بكم في بوابة أولياء الأمور - مدرسة مرج الحمام المهنية للبنين</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>تسجيل دخول ولي الأمر</h2>
+      <form onsubmit="handleParentSubmit(event)">
+        <label for="parent-name">اسم ولي الأمر:</label>
+        <input type="text" id="parent-name" name="parent-name" placeholder="ادخل اسمك الكامل" required>
+
+        <label for="student-name">اسم الطالب:</label>
+        <input type="text" id="student-name" name="student-name" placeholder="ادخل اسم الطالب الكامل" required>
+
+        <label for="relation">العلاقة:</label>
+        <select id="relation" name="relation">
+          <option value="أب">أب</option>
+          <option value="أم">أم</option>
+          <option value="ولي أمر آخر">ولي أمر آخر</option>
+        </select>
+
+        <button type="submit" class="btn">دخول</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة الطالب - مرج الحمام المهنية</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const grade = document.getElementById('grade').value;
+      const major = document.getElementById('major').value;
+
+      if (grade && major) {
+        alert(`تم اختيار: صف ${grade} - تخصص ${document.querySelector('#major option:checked').text}`);
+      } else {
+        alert('يرجى اختيار الصف والتخصص.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>منصة الطالب</h1>
+      <p class="sub">اختر تخصصك وصفّك للمتابعة</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <form onsubmit="handleSubmit(event)" class="form-box">
+      <label for="grade">اختر الصف:</label>
+      <select name="grade" id="grade">
+        <option value="10">الصف العاشر</option>
+        <option value="11">الصف الحادي عشر</option>
+        <option value="12">الصف الثاني عشر</option>
+      </select>
+
+      <label for="major">اختر التخصص:</label>
+      <select name="major" id="major">
+        <option value="engineering">الهندسة</option>
+        <option value="business">الأعمال</option>
+        <option value="it">تكنولوجيا المعلومات</option>
+        <option value="agriculture">الزراعة</option>
+        <option value="hospitality">الضيافة</option>
+        <option value="beauty">الشَعر والتجميل</option>
+        <option value="media">الوسائط الإبداعية</option>
+        <option value="tourism">السفر والسياحة</option>
+      </select>
+
+      <button type="submit" class="btn">متابعة</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+</body>
+</html>

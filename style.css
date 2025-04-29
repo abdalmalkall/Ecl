@@ -1,294 +1,182 @@
-/* Reset and Base Styles */
+/* تعريف الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
 }
 
+/* الجسم العام */
 body {
-    min-height: 100vh;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* Container */
+/* الهيدر */
+header {
+  background: linear-gradient(to right, #3a3a3a, #222);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header .sub {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* الرئيسية */
+main {
+  padding: 40px 20px;
+  background-color: #222;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    text-align: center;
-    max-width: 400px;
-    margin: 50px auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Titles and Paragraphs */
-h1 {
-    margin-bottom: 10px;
-    color: #333;
+.welcome h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #e5e5e5;
+  letter-spacing: 1px;
 }
 
-p {
-    margin-bottom: 20px;
-    color: #666;
+.welcome p {
+  font-size: 1.1rem;
+  color: #bbb;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-/* Inputs and Buttons */
-input[type="email"],
-input[type="text"],
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+.login-section {
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4facfe;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.login-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ffd700;
+  font-weight: 600;
 }
 
-button:hover {
-    background-color: #00c3ff;
+.login-buttons a {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 10px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* General Button */
-.language-switcher {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #333;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.login-buttons a:hover {
+  background-color: #ffd700;
+  transform: translateY(-3px);
 }
 
-.language-switcher:hover {
-    background-color: #4facfe;
+.login-buttons a:active {
+  transform: translateY(0);
 }
 
-/* Footer Styles */
-.footer {
-    width: 100%;
-    background-color: #222;
-    color: #bbb;
-    padding: 20px 0;
-    font-size: 14px;
+/* الإعلانات */
+.announcements h3 {
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
+.announcements ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
 }
 
-.footer-content p {
-    margin-bottom: 10px;
+.announcements ul li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.announcements ul li:hover {
+  background-color: #444;
 }
 
-.footer-nav a {
-    color: #4facfe;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+/* الفوتر */
+footer {
+  background-color: #111;
+  color: #bbb;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.footer-nav a:hover {
-    color: #00f2fe;
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .footer-nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', 'Arial', sans-serif;
+footer p {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
+/* التأثيرات العامة */
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* تأثيرات التحميل */
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #eee;
+  animation: fadeIn 1s ease-out;
 }
 
-/* Container */
-.container {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    max-width: 450px;
-    margin: 70px auto;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Titles and Paragraphs */
-h1 {
-    margin-bottom: 15px;
-    color: #ffffff;
-    font-size: 32px;
-    letter-spacing: 1px;
-}
-
-p {
-    margin-bottom: 25px;
-    color: #cccccc;
-    font-size: 16px;
-}
-
-/* Inputs and Buttons */
-input[type="email"],
-input[type="text"],
-input[type="file"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #555;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-input::placeholder {
-    color: #bbb;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s ease;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
-    transform: translateY(-3px);
-}
-
-/* Subjects List */
-.subjects {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 30px 0;
-}
-
-.subjects a {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #eee;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-.subjects a:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-}
-
-/* General Button */
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.4s;
-}
-
-.button:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
-    transform: translateY(-3px);
-}
-
-/* Footer Styles */
-.footer {
-    width: 100%;
-    background: #111;
-    color: #bbb;
-    padding: 30px 0;
-    font-size: 15px;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.footer-content p {
-    margin-bottom: 12px;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.footer-nav a {
-    color: #6a11cb;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.footer-nav a:hover {
-    color: #2575fc;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .footer-nav {
-        flex-direction: column;
-        gap: 12px;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

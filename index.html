@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecl - Login</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مرج الحمام المهنية للبنين</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- sgdf -->
-<div class="container">
-    <h1 data-key="home">الصفحة الرئيسية</h1>
-    <p data-key="sign_in">تسجيل الدخول باستخدام بريدك الإلكتروني</p>
-    <form id="login-form">
-        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
-        <a href="home.html">تسجيل الدخول</a>
-    </form>
-    <div id="message"></div>
-</div>
+  <header>
+    <div class="container">
+      <h1>مدرسة مرج الحمام المهنية للبنين</h1>
+      <p class="sub">منصة التواصل التعليمية - Educational Communication Launcher</p>
+    </div>
+  </header>
 
-<!-- زر تغيير اللغة -->
-<div class="language-switcher" onclick="changeLanguage()">العربية</div>
+  <main class="container">
+    <section class="welcome">
+      <h2>مرحبًا بكم في منصتنا التعليمية</h2>
+      <p>تهدف هذه المنصة إلى تعزيز التواصل بين الطلاب، المعلمين، وأولياء الأمور بطريقة سهلة وفعالة.</p>
+    </section>
 
-<footer class="footer">
-  <div class="footer-content">
-    <p>&copy; 2025 Ecl. All rights reserved.</p>
-    <nav class="footer-nav">
-      <a href="about.html" data-key="about">من نحن</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </nav>
-  </div>
-</footer>
+    <section class="login-section">
+      <h3>تسجيل الدخول</h3>
+      <div class="login-buttons">
+        <a href="/bage.html" class="btn">دخول الطلاب</a>
+        <a href="/Student-Page.html" class="btn">دخول المعلمين</a>
+        <a href="/Parents.html" class="btn">دخول أولياء الأمور</a>
+      </div>
+    </section>
 
-<script src="/js/script.js"></script>
+    <section class="announcements">
+      <h3>الإعلانات الحديثة</h3>
+      <ul>
+        <li>📢 بدء التسجيل للفصل الدراسي الجديد.</li>
+        <li>📢 نتائج الفصل السابق متوفرة الآن.</li>
+        <li>📢 اجتماع أولياء الأمور يوم الخميس القادم.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
 </body>
 </html>
