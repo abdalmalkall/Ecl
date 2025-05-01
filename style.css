@@ -3,17 +3,17 @@
 
 /* المتغيرات */
 :root {
-  --primary-color: #90cdf4;       
-  --secondary-color: #2d3748;       
-  --bg-color: #0d1117;              
+  --primary-color: #90cdf4;         /* أزرق سماوي ناعم */
+  --secondary-color: #2d3748;       /* أزرق داكن */
+  --bg-color: #0d1117;              /* أسود داكن مريح */
   --surface-color: #161b22;         
   --text-color: #e0e0e0;            
-  --accent-color:   #ffffff;          
-  --accent-hover: #ada1a1;          
+  --accent-color: #3b82f6;          
+  --accent-hover: #000000;          
   --transition-speed: 0.3s;
 }
 
-
+/* الإعدادات العامة */
 * {
   margin: 0;
   padding: 0;
@@ -238,4 +238,42 @@ button:hover {
   footer {
     font-size: 0.9rem;
   }
+}
+header {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.logo-img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.header-text h1 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.sub {
+  font-size: 16px;
+  color: #777;
+  margin-top: 5px;
 }
