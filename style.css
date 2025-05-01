@@ -1,15 +1,15 @@
-/* استيراد الخطوط */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lora:wght@400;600&display=swap');
+/* استيراد خط Cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
 /* المتغيرات */
 :root {
-  --primary-color: #f4c430; /* ذهبي ملكي */
-  --secondary-color: #1f1f1f;
-  --bg-color: #0a0a0a;
-  --surface-color: #151515;
-  --text-color: #e0e0e0;
-  --accent-color: #d4af37;
-  --accent-hover: #ffffff;
+  --primary-color: #000000;     /* أسود للنصوص */
+  --secondary-color: #333333;
+  --bg-color: #f5f5dc;          /* بيج للخلفية */
+  --surface-color: #8b7d5c;     /* أبيض للأسطح */
+  --text-color: #000000;        /* أسود للنص */
+  --accent-color: #8b7d5c;      /* بيج غامق للأزرار */
+  --accent-hover: #5a5138;      /* أغمق عند التمرير */
   --transition-speed: 0.3s;
 }
 
@@ -23,7 +23,7 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Lora', serif;
+  font-family: 'Cairo', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   animation: slideFadeIn 1.2s ease-out;
@@ -31,29 +31,30 @@ body {
 
 /* الهيدر */
 header {
-  background: linear-gradient(135deg, #1f1f1f, #0a0a0a);
-  color: var(--accent-color);
+  background: linear-gradient(135deg, #f5f5dc, #eae6c6);
+  color: var(--primary-color);
   text-align: center;
-  padding: 60px 20px;
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+  padding: 50px 20px 40px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 }
 
-header h5 {
-  font-family: 'Merriweather', serif;
-  font-size: 3.5rem;
-  letter-spacing: 3px;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+header h1 {
+  font-size: 3.2rem;
+  letter-spacing: 0;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
   transition: transform var(--transition-speed);
+  color: var(--primary-color);
 }
 
 header h1:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 header .sub {
-  font-size: 1.2rem;
-  color: #b3b3b3;
-  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
 }
 
 /* الرئيسية */
@@ -63,13 +64,12 @@ main {
   padding: 40px;
   background-color: var(--surface-color);
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   animation: slideFadeIn 1.5s ease-out;
 }
 
 /* ترحيب */
 .welcome h2 {
-  font-family: 'Merriweather', serif;
   font-size: 3rem;
   color: var(--primary-color);
   text-align: center;
@@ -78,7 +78,7 @@ main {
 
 .welcome p {
   font-size: 1.3rem;
-  color: #cccccc;
+  color: #222;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -92,21 +92,20 @@ main {
   display: inline-block;
   padding: 16px 40px;
   margin: 12px;
-  background-color: #222;
+  background-color: var(--accent-color);
   color: white;
   font-size: 1.2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: all var(--transition-speed);
   text-decoration: none;
-  border: 1px solid var(--accent-color);
+  border: none;
 }
 
 .login-buttons a:hover {
-  background-color: var(--accent-color);
-  color: #000;
+  background-color: var(--accent-hover);
+  color: #fff;
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
 }
 
 /* الإعلانات */
@@ -118,29 +117,30 @@ main {
 }
 
 .announcements ul li {
-  background-color: #1e1e1e;
+  background-color: #f0eede;
   margin: 15px auto;
   padding: 16px;
   border-radius: 12px;
   width: 90%;
   font-size: 1.2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--primary-color);
 }
 
 .announcements ul li:hover {
-  background-color: #2a2a2a;
+  background-color: #e5dec5;
   transform: scale(1.01);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* الفوتر */
 footer {
-  background-color: #0a0a0a;
+  background-color: #eae6c6;
   padding: 30px 20px;
-  color: #999;
+  color: #333;
   text-align: center;
   font-size: 1.1rem;
-  box-shadow: 0 -5px 20px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
   margin-top: 50px;
 }
 
@@ -149,18 +149,17 @@ input {
   width: 100%;
   padding: 14px;
   margin-bottom: 20px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #222;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   font-size: 1rem;
-  border: 1px solid #333;
 }
 
 label {
   display: block;
   margin-bottom: 8px;
-  color: #ccc;
+  color: #333;
   font-size: 1rem;
 }
 
@@ -169,14 +168,14 @@ button {
   width: 100%;
   padding: 14px;
   background-color: var(--accent-color);
-  color: #000;
+  color: #fff;
   font-size: 1.1rem;
   font-weight: bold;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: var(--transition-speed);
-  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
@@ -242,41 +241,4 @@ button:hover {
   footer {
     font-size: 0.9rem;
   }
-}
-/* استيراد خط جديد */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-/* تحديث إعدادات عامة */
-body {
-  font-family: 'Cairo', sans-serif;
-}
-
-/* الهيدر */
-header {
-  background: linear-gradient(135deg, #1f1f1f, #0a0a0a);
-  color: #ffffff;
-  text-align: center;
-  padding: 50px 20px 40px;
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
-}
-
-header h1 {
-  font-family: 'Cairo', sans-serif;
-  font-size: 3.2rem;
-  letter-spacing: 0; /* إزالة التباعد بين الحروف */
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-  margin-bottom: 15px;
-  transition: transform var(--transition-speed);
-  color: var(--primary-color);
-}
-
-header h1:hover {
-  transform: scale(1.05);
-}
-
-header .sub {
-  font-size: 1.1rem;
-  color: #cccccc;
-  margin-top: 0;
-  margin-bottom: 10px;
 }
