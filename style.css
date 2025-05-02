@@ -765,3 +765,62 @@ button:hover {
   color: var(--accent-hover);
   font-weight: bold;
 }
+/* اتفاقية الاستخدام */
+.terms {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 50px;
+  background-color: #fdfaf2;
+  border: 2px solid #d6ccb3;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.07);
+  animation: slideFadeIn 1.5s ease-out;
+}
+
+.terms h2 {
+  font-size: 2.6rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.terms p {
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.terms ul {
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+header {
+  background: url('logo3.png') no-repeat center center;
+  background-size: cover; /* تغطية الهيدر بالكامل بالصورة */
+  color: var(--primary-color);
+  text-align: center;
+  padding: 50px 20px 40px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+.site-footer {
+  font-size: 0.75rem; /* حجم أصغر */
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.site-footer h2 {
+  font-size:1.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.site-footer p {
+  margin: 6px 0;
+  font-size: 0.85rem;
+  color: #444;
+}
