@@ -1,4 +1,314 @@
-/* استيراد خط Cairo */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* المتغيرات */
+:root {
+  --primary-color: #000000;     /* أسود للنصوص */
+  --secondary-color: #333333;
+  --bg-color: #f5f5dc;          /* بيج للخلفية */
+  --surface-color: #8b7d5c;     /* أبيض للأسطح */
+  --text-color: #000000;        /* أسود للنص */
+  --accent-color: #8b7d5c;      /* بيج غامق للأزرار */
+  --accent-hover: #5a5138;      /* أغمق عند التمرير */
+  --transition-speed: 0.3s;
+}
+
+/* الإعدادات العامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  animation: slideFadeIn 1.2s ease-out;
+}
+
+/* الهيدر */
+header {
+  background: linear-gradient(135deg, #f5f5dc, #eae6c6);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 50px 20px 40px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  font-size: 3.2rem;
+  letter-spacing: 0;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform var(--transition-speed);
+  color: var(--primary-color);
+}
+
+header h1:hover {
+  transform: scale(1.05);
+}
+
+header .sub {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* الرئيسية */
+main {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: var(--surface-color);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  animation: slideFadeIn 1.5s ease-out;
+}
+
+/* ترحيب */
+.welcome h2 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome p {
+  font-size: 1.3rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* الأزرار */
+.login-buttons {
+  text-align: center;
+}
+
+.login-buttons a {
+  display: inline-block;
+  padding: 16px 40px;
+  margin: 12px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: all var(--transition-speed);
+  text-decoration: none;
+  border: none;
+}
+
+.login-buttons a:hover {
+  background-color: var(--accent-hover);
+  color: #fff;
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* الإعلانات */
+.announcements h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.announcements ul li {
+  background-color: #f0eede;
+  margin: 15px auto;
+  padding: 16px;
+  border-radius: 12px;
+  width: 90%;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--primary-color);
+}
+
+.announcements ul li:hover {
+  background-color: #e5dec5;
+  transform: scale(1.01);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* الفوتر */
+footer {
+  background-color: #eae6c6;
+  padding: 30px 20px;
+  color: #333;
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+}
+
+/* النماذج */
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* الأزرار */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition-speed);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+/* روابط إضافية */
+.extra-links,
+.register-link,
+.back-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.extra-links a,
+.register-link a,
+.back-link a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.extra-links a:hover,
+.register-link a:hover,
+.back-link a:hover {
+  color: var(--accent-hover);
+}
+
+/* مؤثر دخول */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* التجاوب */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome h2 {
+    font-size: 2rem;
+  }
+
+  .login-buttons a {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+
+  .announcements ul li {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  main, .schedule, .calendar, .grades, .meeting, .roles, .vision-mission, .development-plan {
+    padding: 20px;
+    margin: 30px 10px;
+  }
+
+  header {
+    padding: 30px 10px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .welcome h2 {
+    font-size: 1.8rem;
+  }
+
+  .welcome p {
+    font-size: 1.1rem;
+  }
+
+  .login-buttons a {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .announcements ul li {
+    font-size: 1rem;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .grades .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .schedule table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .meeting p,
+  .calendar ul li,
+  .roles ul li,
+  .vision-mission p,
+  .development-plan p {
+    font-size: 1rem;
+  }
+
+  footer, .site-footer {
+    font-size: 0.85rem;
+    padding: 20px 10px;
+  }
+}
+
+/* باقي الأقسام كما هي */
+/* ... */
+
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
 /* المتغيرات */
