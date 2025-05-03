@@ -824,3 +824,8 @@ header {
   font-size: 0.85rem;
   color: #444;
 }
+header img.image {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+} 
