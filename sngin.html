@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تسجيل الدخول</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary-color: #000000;
+      --secondary-color: #333333;
+      --bg-color: #f5f5dc;
+      --surface-color: #8b7d5c;
+      --text-color: #774d4d;
+      --accent-color: #8b7d5c;
+      --accent-hover: #5a5138;
+      --transition-speed: 0.3s;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+      padding: 40px;
+      text-align: center;
+      color: var(--text-color);
+    }
+
+    .login-section {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(250, 0, 0, 0.1);
+      background-color: var(--surface-color);
+      color: var(--text-color);
+    }
+
+    .login-section h2 {
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .login-buttons a {
+      display: block;
+      background-color: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      transition: background var(--transition-speed) ease;
+    }
+
+    .login-buttons a:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .login-buttons i {
+      margin-left: 8px;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background var(--transition-speed) ease;
+    }
+
+    .home-button:hover {
+      background-color: var(--accent-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- زر العودة للصفحة الرئيسية -->
+  <a href="index.html" class="home-button"><i class="fas fa-home"></i> الصفحة الرئيسية</a>
+
+  <section class="login-section">
+    <h2>تسجيل الدخول إلى المنصة التعليمية</h2>
+    <div class="login-buttons">
+      <a href="Managers.html" class="btn"><i class="fas fa-user-shield"></i> دخول المدير ومدراء الأقسام</a>
+      <a href="Student-Page.html" class="btn"><i class="fas fa-chalkboard-teacher"></i> دخول المعلمين</a>
+      <a href="bage.html" class="btn"><i class="fas fa-user-graduate"></i> دخول الطلاب</a>
+      <a href="Parents.html" class="btn"><i class="fas fa-users"></i> دخول أولياء الأمور</a>
+      <a href="register.html" class="btn"><i class="fas fa-envelope"></i> ليس لديك حساب؟ أنشئ بريدًا إلكترونيًا الآن</a>
+    </div>
+  </section>
+
+</body>
+</html>
