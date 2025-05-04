@@ -13,66 +13,29 @@
   </header>
 
   <main>
-    <h2>التسجيل</h2>
-    <form id="registerForm">
-      <label for="email">البريد الإلكتروني:</label>
-      <input type="email" id="email" required placeholder="example@email.com">
-
-      <label for="password">كلمة المرور:</label>
-      <input type="password" id="password" required placeholder="********">
-
-      <label for="confirmPassword">تأكيد كلمة المرور:</label>
-      <input type="password" id="confirmPassword" required placeholder="********">
-
-      <button type="submit">إنشاء حساب</button>
-
-      <div class="back-link">
-        <a href="Parents.html">العودة إلى تسجيل الدخول</a>
-      </div>
+    <form id="loginForm">
+      <input type="email" id="email" required>
+      <input type="password" id="password" required>
+      <button type="submit">تسجيل الدخول</button>
+    </form>
+    <div id="message"></div>
+    
+    <script src="login.js"></script>
+    
     </form>
   </main>
-
+  <form id="addAnnouncementForm">
+    <input type="text" id="title" placeholder="عنوان الإعلان" required>
+    <textarea id="description" placeholder="وصف الإعلان" required></textarea>
+    <button type="submit">إضافة الإعلان</button>
+  </form>
+  
+  <script src="addAnnouncement.js"></script>
+  
   <footer>
     <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
   </footer>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDCnVQRJdIZmUoQUfs2lgxzkaAi6ZgPIC0",
-      authDomain: "ecl11-abe91.firebaseapp.com",
-      projectId: "ecl11-abe91",
-      storageBucket: "ecl11-abe91.appspot.com",
-      messagingSenderId: "1018082200776",
-      appId: "1:1018082200776:web:785f649089c6e603e7a9fd"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    document.getElementById("registerForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
-
-      if (password !== confirmPassword) {
-        alert("كلمتا المرور غير متطابقتين.");
-        return;
-      }
-
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          alert("تم إنشاء الحساب بنجاح!");
-          window.location.href = "/Parents.html";
-        })
-        .catch((error) => {
-          alert("فشل في إنشاء الحساب: " + error.message);
-        });
-    });
-  </script>
+  
 </body>
 </html>

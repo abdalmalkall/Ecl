@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "firebase": "^11.6.1"
+    "firebase": "^11.6.1",
+    "mongoose": "^8.14.1"
   },
   "name": "can",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
