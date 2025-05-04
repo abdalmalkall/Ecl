@@ -1,15 +1,13 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
-/* المتغيرات */
 :root {
-  --primary-color: #000000;     /* أسود للنصوص */
-  --secondary-color: #333333;
-  --bg-color: #f5f5dc;          /* بيج للخلفية */
-  --surface-color: #8b7d5c;     /* أبيض للأسطح */
-  --text-color: #000000;        /* أسود للنص */
-  --accent-color: #8b7d5c;      /* بيج غامق للأزرار */
-  --accent-hover: #5a5138;      /* أغمق عند التمرير */
+  --primary-color: #000000;         /* أسود للنصوص */
+  --secondary-color: #333333;       /* رمادي غامق */
+  --bg-color: #f5f5dc;              /* بيج للخلفية */
+  --surface-color: #ffffff;         /* أبيض للأسطح */
+  --text-color: #000000;            /* أسود للنص */
+  --accent-color: #8b7d5c;          /* بيج غامق للأزرار */
+  --accent-hover: #5a5138;          /* أغمق عند التمرير */
   --transition-speed: 0.3s;
 }
 
@@ -829,3 +827,18 @@ header img.image {
   height: auto;
   margin-bottom: 15px;
 } 
+.message-success {
+  color: green;
+  background-color: #e0ffe0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.message-error {
+  color: red;
+  background-color: #ffe0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}

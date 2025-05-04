@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>إنشاء حساب جديد - أولياء الأمور</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <header>
@@ -13,29 +13,23 @@
   </header>
 
   <main>
-    <form id="loginForm">
-      <input type="email" id="email" required>
-      <input type="password" id="password" required>
-      <button type="submit">تسجيل الدخول</button>
-    </form>
-    <div id="message"></div>
-    
-    <script src="login.js"></script>
-    
-    </form>
+    <section class="form-container">
+      <form id="loginForm" class="form-box">
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+        <input type="password" id="password" placeholder="كلمة المرور" required />
+        <button type="submit">تسجيل الدخول</button>
+        <div id="message"></div>
+      </form>
+    </section>
   </main>
-  <form id="addAnnouncementForm">
-    <input type="text" id="title" placeholder="عنوان الإعلان" required>
-    <textarea id="description" placeholder="وصف الإعلان" required></textarea>
-    <button type="submit">إضافة الإعلان</button>
-  </form>
-  
-  <script src="addAnnouncement.js"></script>
-  
+
   <footer>
     <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
   </footer>
 
-  
+  <!-- <script src="script.js"></script> -->
+  <script type="module" src="signup.js"></script>
+
+
 </body>
 </html>
