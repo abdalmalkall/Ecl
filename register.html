@@ -12,8 +12,8 @@
 <body>
   <div class="container">
     <h2>تسجيل الدخول باستخدام البريد الإلكتروني</h2>
-    <input type="email" id="email" placeholder="الإيميل"><br>
-    <input type="password" id="password" placeholder="كلمة السر"><br>
+    <input type="email" id="email" placeholder="email"><br>
+    <input type="password" id="password" placeholder="password`"><br>
     <button onclick="loginWithEmail()">تسجيل الدخول</button>
 
     <hr>
@@ -44,7 +44,7 @@
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           alert("تم تسجيل الدخول بالإيميل بنجاح");
-          window.location.href = "HH.html";
+          window.location.href = "sngin.html";
         })
         .catch((error) => {
           alert("خطأ: " + error.message);
