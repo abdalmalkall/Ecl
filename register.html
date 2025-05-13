@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <title>تسجيل الدخول</title>
+  <link rel="stylesheet" href="login.css" />
+
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js"></script>
 </head>
 <body>
-  <h2>تسجيل الدخول باستخدام البريد الإلكتروني</h2>
-  <input type="email" id="email" placeholder="الإيميل"><br>
-  <input type="password" id="password" placeholder="كلمة السر"><br>
-  <button onclick="loginWithEmail()">تسجيل الدخول</button>
+  <div class="container">
+    <h2>تسجيل الدخول باستخدام البريد الإلكتروني</h2>
+    <input type="email" id="email" placeholder="الإيميل"><br>
+    <input type="password" id="password" placeholder="كلمة السر"><br>
+    <button onclick="loginWithEmail()">تسجيل الدخول</button>
 
-  <hr>
+    <hr>
 
-  <h2>تسجيل الدخول باستخدام رقم الهاتف</h2>
-  <div id="recaptcha-container"></div>
-  <input type="text" id="phone" placeholder="+9627xxxxxxxx"><br>
-  <button onclick="sendCode()">أرسل الكود</button><br><br>
+    <h2>تسجيل الدخول باستخدام رقم الهاتف</h2>
+    <div id="recaptcha-container"></div>
+    <input type="text" id="phone" placeholder="+9627xxxxxxxx"><br>
+    <button onclick="sendCode()">أرسل الكود</button><br><br>
 
-  <input type="text" id="code" placeholder="رمز التحقق"><br>
-  <button onclick="verifyCode()">تحقق من الرمز</button>
+    <input type="text" id="code" placeholder="رمز التحقق"><br>
+    <button onclick="verifyCode()">تحقق من الرمز</button>
+  </div>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
@@ -38,7 +43,7 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    // تسجيل الدخول باستخدام البريد الإلكتروني
+    // تسجيل الدخول بالإيميل
     window.loginWithEmail = () => {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
@@ -46,13 +51,14 @@
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           alert("تم تسجيل الدخول بالإيميل بنجاح");
+          window.location.href = "HH.html";
         })
         .catch((error) => {
           alert("خطأ: " + error.message);
         });
     };
 
-    // تسجيل الدخول باستخدام رقم الهاتف
+    // تسجيل الدخول برقم الهاتف
     let confirmationResult;
     window.sendCode = () => {
       const phoneNumber = document.getElementById("phone").value;
@@ -76,6 +82,7 @@
       confirmationResult.confirm(code)
         .then((result) => {
           alert("تم تسجيل الدخول برقم الهاتف بنجاح");
+          window.location.href = "HH.html";
         })
         .catch((error) => {
           alert("كود التحقق خاطئ");
