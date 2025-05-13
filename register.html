@@ -1,35 +1,86 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>إنشاء حساب جديد - أولياء الأمور</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول</title>
+  <script src="https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js"></script>
 </head>
 <body>
-  <header>
-    <h1>إنشاء حساب جديد</h1>
-  </header>
+  <h2>تسجيل الدخول باستخدام البريد الإلكتروني</h2>
+  <input type="email" id="email" placeholder="الإيميل"><br>
+  <input type="password" id="password" placeholder="كلمة السر"><br>
+  <button onclick="loginWithEmail()">تسجيل الدخول</button>
 
-  <main>
-    <section class="form-container">
-      <form id="loginForm" class="form-box">
-        <input type="email" id="email" placeholder="البريد الإلكتروني" required />
-        <input type="password" id="password" placeholder="كلمة المرور" required />
-        <button type="submit">تسجيل الدخول</button>
-        <div id="message"></div>
-      </form>
-    </section>
-  </main>
+  <hr>
 
-  <footer>
-    <p>© 2025 مدرسة مرج الحمام المهنية للبنين. جميع الحقوق محفوظة.</p>
-  </footer>
+  <h2>تسجيل الدخول باستخدام رقم الهاتف</h2>
+  <div id="recaptcha-container"></div>
+  <input type="text" id="phone" placeholder="+9627xxxxxxxx"><br>
+  <button onclick="sendCode()">أرسل الكود</button><br><br>
 
-  <!-- <script src="script.js"></script> -->
-  <script type="module" src="signup.js"></script>
+  <input type="text" id="code" placeholder="رمز التحقق"><br>
+  <button onclick="verifyCode()">تحقق من الرمز</button>
 
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
 
+    const firebaseConfig = {
+      apiKey: "AIzaSyAPn3dpBdHPIPLlNxw3gCdmf5P-8SK83qY",
+      authDomain: "abod-7563f.firebaseapp.com",
+      projectId: "abod-7563f",
+      storageBucket: "abod-7563f.firebasestorage.app",
+      messagingSenderId: "275146254023",
+      appId: "1:275146254023:web:cfff962961431dfd4ec0e2"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // تسجيل الدخول باستخدام البريد الإلكتروني
+    window.loginWithEmail = () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert("تم تسجيل الدخول بالإيميل بنجاح");
+        })
+        .catch((error) => {
+          alert("خطأ: " + error.message);
+        });
+    };
+
+    // تسجيل الدخول باستخدام رقم الهاتف
+    let confirmationResult;
+    window.sendCode = () => {
+      const phoneNumber = document.getElementById("phone").value;
+      const appVerifier = new RecaptchaVerifier('recaptcha-container', {
+        'size': 'invisible'
+      }, auth);
+
+      signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+        .then((result) => {
+          confirmationResult = result;
+          alert("تم إرسال الكود");
+        })
+        .catch((error) => {
+          alert("خطأ: " + error.message);
+        });
+    };
+
+    // التحقق من رمز التحقق
+    window.verifyCode = () => {
+      const code = document.getElementById("code").value;
+      confirmationResult.confirm(code)
+        .then((result) => {
+          alert("تم تسجيل الدخول برقم الهاتف بنجاح");
+        })
+        .catch((error) => {
+          alert("كود التحقق خاطئ");
+        });
+    };
+  </script>
 </body>
 </html>

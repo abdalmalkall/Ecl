@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "firebase": "^11.6.1",
+    "firebase": "^11.7.1",
     "mongoose": "^8.14.1"
   },
   "name": "can",
