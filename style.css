@@ -842,3 +842,118 @@ header img.image {
   border-radius: 5px;
   margin-top: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .logo-container {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .logo-container img {
+      width: 160px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: logoEntrance 1s ease forwards;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.08) rotate(1deg);
+      box-shadow: 0 15px 35px rgba(90, 90, 90, 0.5);
+   
+
+    }
+
+    .logo-container a img {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes logoEntrance {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .logo-container {
+  display: flex;
+  justify-content: center;       /* توسيط اللوجوه أفقياً */
+  align-items: center;           /* توسيط عمودياً */
+  gap: 40px;                    /* فراغ بين اللوجوه */
+  margin: 50px auto;            /* مسافة من فوق وأسفل، مع توسيط الحاوية */
+  padding: 20px 40px;
+  max-width: 600px;             /* عرض الحاوية محدود */
+  background: linear-gradient(135deg, #e9cc8d, #ffffff, #e9cc8d); /* خلفية متدرجة غامقة */
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.7); /* ظل عميق */
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo-container img {
+  max-height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-container a:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.8); /* ظل ذهبي لامع عند المرور */
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.9));
+}
